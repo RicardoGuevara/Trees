@@ -5,6 +5,8 @@
  */
 package nodes;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author rpayan
@@ -113,6 +115,27 @@ public class BiNode <T>{
             System.out.println(node);
         } 
     }
+    
+    /**
+     * recorrido por niveles
+     */
+    public void perLevels()
+    {
+        ArrayList<BiNode> pila = new ArrayList<>();
+        pila.add(this);
+        BiNode temp;
+        
+        while(!pila.isEmpty())
+        {
+            temp = pila.get(0);
+            System.out.println(temp);
+            pila.remove(0);
+            pila.add(temp.getIzq());
+            pila.add(temp.getDer());
+        }
+        
+    }
+    
     
 //GETTERS & SETTERS_____________________________________________________________    
 
