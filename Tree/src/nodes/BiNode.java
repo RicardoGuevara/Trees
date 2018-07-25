@@ -19,19 +19,29 @@ public class BiNode <T>{
         return "Node _ Bi //"+ this.hashCode()+" // "+this.getContent();
     }
     
-    public BiNode(T content, BiNode izq, BiNode der, BiNode father) 
+    public BiNode(T content, BiNode izq, BiNode der, BiNode father, boolean orientation) 
     {
         this.content = content;
         this.izq = izq;
         this.der = der;
-        this.father = father;
+        this.setFather(father, orientation);
         this.setLevel(father.getLevel() + 1);
+        mayLevel = level>mayLevel? level:mayLevel;
     }
 
-    public BiNode(BiNode father) 
+    public BiNode(BiNode father, boolean orientation) 
     {
-        this.father = father;
+        this.setFather(father, orientation);
         this.setLevel(father.getLevel() + 1);
+        mayLevel = level>mayLevel? level:mayLevel;
+    }
+
+    public BiNode(T content, BiNode father, boolean orientation) 
+    {
+        this.content = content;
+        this.setFather(father, orientation);
+        this.setLevel(father.getLevel() + 1);
+        mayLevel = level>mayLevel? level:mayLevel;
     }
 
     public BiNode(T content) 
@@ -48,7 +58,25 @@ public class BiNode <T>{
         this.der = der;
     }
 
+    public BiNode(BiNode izq, BiNode der, BiNode father, boolean orientation) {
+        this.izq = izq;
+        this.der = der;
+        this.setFather(father, orientation);
+    }
+    
+    
+    
 //METHODS_______________________________________________________________________
+    
+    /**
+     * this is absolute useless
+     * @param node
+     * @param orientation 
+     */
+    public void add(BiNode node, boolean orientation)
+    {
+        node.setFather(this, orientation);
+    }
     
     /**
      * recorrido pre_orden
@@ -141,6 +169,11 @@ public class BiNode <T>{
         }
         
     }
+
+    public int getHeigth()
+    {
+        return mayLevel;
+    }
     
     
 //GETTERS & SETTERS_____________________________________________________________    
@@ -173,20 +206,31 @@ public class BiNode <T>{
         return father;
     }
 
-    public void setFather(BiNode father) {
+    public void setFather(BiNode father, boolean orientation) {
+        if(orientation)
+        {
+            father.setDer(this);
+        }
+        else
+        {
+            father.setIzq(this);
+        }
         this.father = father;
+        this.level = father.getLevel() + 1;
+        mayLevel = level>mayLevel? level:mayLevel;
     }
 
     public int getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    private void setLevel(int level) {
         this.level = level;
     }
 
 //ATRIBUTES_____________________________________________________________________    
     
+    public static int mayLevel=0;
     private int level=0;
     private T content;
     private BiNode izq;
