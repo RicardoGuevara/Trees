@@ -79,11 +79,34 @@ public class NaNode <T>{
 
 //METHODS_______________________________________________________________________
 
-    public int getWe()
+    public boolean contains()
     {
-        recursiveWe(this);
+        return false; // complete plss
     }
     
+    /**
+     * returns the grade
+     * @return 
+     */
+    public int getGrade()
+    {
+        return 0; // complete plss
+    }
+    
+    /**
+     * peso del árbol
+     * @return 
+     */
+    public int getWe()
+    {
+        return recursiveWe(this);
+    }
+    
+    /**
+     * función recursiva para determinar el peso del árbol
+     * @param nn
+     * @return 
+     */
     private int recursiveWe(NaNode nn)
     {
         if(nn == null)
@@ -97,8 +120,9 @@ public class NaNode <T>{
             
             for (NaNode son : temp) 
             {
-                // fault
+                total += recursiveWe(son);
             }
+            return total + 1;
         }
     }
     
@@ -149,7 +173,21 @@ public class NaNode <T>{
     }
             
     private void recursiveDel(NaNode node)
-    {}
+    {
+        if (node.getSons().size() != 0) 
+        {
+            ArrayList<NaNode> temp = node.getSons();
+            
+            for (NaNode son : temp) 
+            {
+                recursiveDel(son);
+            }
+        }
+        else
+        {
+            node.getFather().setSons(null);
+        }
+    }
     
 //GETTERS & SETTERS_____________________________________________________________
 
