@@ -130,8 +130,14 @@ public class BiNode <T>{
             temp = pila.get(0);
             System.out.println(temp);
             pila.remove(0);
-            pila.add(temp.getIzq());
-            pila.add(temp.getDer());
+            if (temp.getIzq() != null) 
+            {
+                pila.add(temp.getIzq());
+            }
+            if (temp.getDer() != null) 
+            {
+                pila.add(temp.getDer());
+            }
         }
         
     }
