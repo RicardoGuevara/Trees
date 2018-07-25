@@ -31,6 +31,7 @@ public class Tree {
         BiNode<String> nod23 = new BiNode("derizq",node12,false);
         BiNode<String> nod24 = new BiNode("derder",node12,true);
         
+        System.out.println("altura: " +node.getHeigth()+"\n");
         System.out.println("inorden_____________________________________________");
         node.inOrden();
         System.out.println("preorden_____________________________________________");
