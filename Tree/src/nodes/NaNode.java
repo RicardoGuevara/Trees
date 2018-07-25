@@ -97,7 +97,7 @@ public class NaNode <T>{
             
             for (NaNode son : temp) 
             {
-                
+                // fault
             }
         }
     }
