@@ -116,9 +116,9 @@ public class BiNode <T>{
     {
         if (node != null) 
         {
-            recursivePreOrden(node.getIzq());
+            recursiveInOrden(node.getIzq());
             System.out.println(node);
-            recursivePreOrden(node.getDer());
+            recursiveInOrden(node.getDer());
         } 
     }
     
@@ -138,8 +138,8 @@ public class BiNode <T>{
     {
         if (node != null) 
         {
-            recursivePreOrden(node.getIzq());
-            recursivePreOrden(node.getDer());
+            recursivePosOrden(node.getIzq());
+            recursivePosOrden(node.getDer());
             System.out.println(node);
         } 
     }
