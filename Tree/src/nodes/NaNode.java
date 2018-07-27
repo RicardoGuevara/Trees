@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author rpayan
  */
-public class NaNode <T>{
+public class NaNode <T> extends Node{
 
     @Override
     public boolean equals(Object object)
@@ -230,5 +230,4 @@ public class NaNode <T>{
     private ArrayList<NaNode> sons;
     private NaNode father;
     private T content;
-    private int level=0;
 }

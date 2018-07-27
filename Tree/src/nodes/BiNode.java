@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author rpayan
  */
-public class BiNode <T>{
+public class BiNode <T> extends Node{
 
     @Override
     public String toString()
@@ -172,7 +172,7 @@ public class BiNode <T>{
 
     public int getHeigth()
     {
-        return mayLevel;
+        return mayLevel - level;
     }
     
     
@@ -231,7 +231,6 @@ public class BiNode <T>{
 //ATRIBUTES_____________________________________________________________________    
     
     public static int mayLevel=0;
-    private int level=0;
     private T content;
     private BiNode izq;
     private BiNode der;
