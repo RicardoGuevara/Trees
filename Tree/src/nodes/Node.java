@@ -11,7 +11,7 @@ package nodes;
  * @param <C>
  */
 public class Node<C> {
-    //
+    //GENERAL NODE DEFINITION
     protected C content;            //node's content <generic class>
     protected int absolute_level;   //level of one Node relative to the top-root
 
@@ -21,6 +21,25 @@ public class Node<C> {
 
     public Node() {
     }
+        
+//GETTERS & SETTERS_____________________________________________________________
+
+    public C getContent() {
+        return content;
+    }
+
+    public void setContent(C content) {
+        this.content = content;
+    }
+
+    public int getAbsolute_level() {
+        return absolute_level;
+    }
+
+    public void setAbsolute_level(int absolute_level) {
+        this.absolute_level = absolute_level;
+    }
+
     
     
 }
