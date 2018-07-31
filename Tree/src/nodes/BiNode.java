@@ -127,6 +127,7 @@ public class BiNode<C extends Comparable> extends Node{
                 //case 0, elemento descartado
                 break;
         }
+        //avl();
     }
     
     /**
@@ -200,6 +201,31 @@ public class BiNode<C extends Comparable> extends Node{
             array.remove(0);
         }
     }    
+    
+    private void avl()
+    {
+        
+    }
+    
+    private void doubleRightRotation()
+    {
+    
+    }
+    
+    private void doubleLeftRotation()
+    {
+    
+    }
+    
+    private void simpleRightRotation()
+    {
+    
+    }
+    
+    private void simpleLeftRotation()
+    {
+    
+    }
     
  //GETTERS & SETTERS____________________________________________________________   
 
