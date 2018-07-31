@@ -9,6 +9,6 @@ package nodes;
  *
  * @author ESTU-5K
  */
-public class NaNode<C> {
+public class NaNode<C extends Comparable> {
     
 }

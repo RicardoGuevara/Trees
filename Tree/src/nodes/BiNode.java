@@ -9,19 +9,19 @@ package nodes;
  *
  * @author ESTU-5K
  */
-public class BiNode<C> extends Node{
+public class BiNode<C extends Comparable> extends Node{
     
     protected BiNode    left,
                         right,
                         root;
 
-    public BiNode(BiNode root, Object content) {
+    public BiNode(BiNode root, C content) {
         super(content);
         this.root = root;
         this.init();
     }
 
-    public BiNode(Object content) {
+    public BiNode(C content) {
         super(content);
     }
 
@@ -45,7 +45,18 @@ public class BiNode<C> extends Node{
     
     private void locate(BiNode node)
     {
-    
+        switch((this.getContent()).compareTo(node.getContent()))
+        {
+            case -1:
+                //recursivo izquierda
+                break;
+            case 1:
+                //recursivo derecha
+                break;
+            default:
+                //elemento descartado
+                break;
+        }
     }
     
 }

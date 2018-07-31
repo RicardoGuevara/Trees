@@ -10,7 +10,7 @@ package nodes;
  * @author ESTU-5K
  * @param <C>
  */
-public class Node<C> {
+public class Node<C  extends Comparable> {
     //GENERAL NODE DEFINITION
     protected C content;            //node's content <generic class>
     protected int absolute_level;   //level of one Node relative to the top-root
