@@ -16,33 +16,16 @@ public class BiNode<C extends Comparable> extends Node{
     protected BiNode    left,
                         right,
                         root;
-
+    
+    
     public BiNode(BiNode root, C content) {
         super(content);
         this.root = root;
         this.init();
     }
-    
-    public BiNode(BiNode root, int content) {
-        super((Integer)content);
-        this.root = root;
-        this.init();
-    }
-    
-    public BiNode(BiNode root, float content) {
-        super((Float)content);
-        this.root = root;
-        this.init();
-    }
-
-    public BiNode(BiNode root, byte content) {
-        super((Byte)content);
-        this.root = root;
-        this.init();
-    }
 
     public BiNode(C content) {
-        super(content);
+        this(null, content);
     }
 
     public BiNode() {
@@ -50,8 +33,14 @@ public class BiNode<C extends Comparable> extends Node{
     
 //METHODS_______________________________________________________________________
     
+    @Override
+    public String toString()
+    {
+        return this.getContent().toString();
+    }
+    
     /**
-     * verifica e inicia parámetros en el nodo
+     * verifica e inicia parámetros en el noSdo
      */
     private void init()
     {

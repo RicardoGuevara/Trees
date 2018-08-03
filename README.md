@@ -1,4 +1,6 @@
 # Trees
 
-àrboles n_arios y àrboles binarios implementados en java
-TDA "node"
+TDA para árboles con contenido de tipo genérico 
+Node <C _comparable>
+  -BiNode
+  -NaNode
